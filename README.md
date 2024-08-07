@@ -8,3 +8,5 @@ In the logic.js file in the js folder, I created functions for the different pie
 The js folder also includes the JavaScript file for the plugin for Leaflet heatmaps. The css folder contains the stylesheet which sets up the info and legend classes Leaflet uses to create the map legend and also tells the map to fill the browser window.
 
 The index.html file includes the library plugins for the Leaflet heatmap and JS code, the D3 library, Marker Cluster code and CSS, and additional styling CSS. Lastly, it connects the function of the web page to my logic.js file. 
+
+The interactive web page is hosted by GitHub Pages and can be reached here: https://redrajah13.github.io/dabc_challenge_15.mapping/.
