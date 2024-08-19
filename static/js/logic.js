@@ -38,7 +38,6 @@ function createMap(data, geo_data) {
     });
   
     // Create the Overlay layers
-    let markers = L.markerClusterGroup();
     let heatArray = [];
     let circleArray = [];
   
@@ -58,7 +57,6 @@ function createMap(data, geo_data) {
             let marker = L.marker(point, {icon: L.divIcon({className: 'custom-marker', html: '<div style="background-color: '+ color +'"></div>'})});
             let popup = `<h3>Magnitude: ${mag}<br/>Location: ${place}<br/>Depth: ${depth}km</h3>`;
             marker.bindPopup(popup);
-            markers.addLayer(marker);
         
             // add to heatmap
             heatArray.push(point);
@@ -98,7 +96,6 @@ function createMap(data, geo_data) {
     };
 
     let overlayLayers = {
-        Markers: markers,
         Heatmap: heatLayer,
         Circles: circleLayer,
         "Tectonic Plates": geoLayer
@@ -115,13 +112,14 @@ function createMap(data, geo_data) {
     let myMap = L.map("map", {
         center: [39.50, -98.35],
         zoom: 3,
-        layers: [street, markers, geoLayer]
+        layers: [street, geoLayer]
     });
 
 
     // Add the Layer Control filter + legends
     L.control.layers(baseLayers, overlayLayers).addTo(myMap);
-  
+    circleLayer.addTo(myMap);
+
     // Legend
     let legend = L.control({position: "bottomright"});
     legend.onAdd = function() {
