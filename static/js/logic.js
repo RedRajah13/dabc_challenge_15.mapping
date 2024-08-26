@@ -125,7 +125,7 @@ function createMap(data, geo_data) {
     legend.onAdd = function() {
         let div = L.DomUtil.create("div", "info legend");
         
-        let legendInfo = "<h4>Earthquake<br/>Magnitude</h4><br/>"
+        let legendInfo = "<h4>Earthquake<br/>Depth</h4><br/>"
         legendInfo += "<i style='background: #FFC0CB'></i><=10<br/>";
         legendInfo += "<i style='background: #F88379'></i>10-30<br/>";
         legendInfo += "<i style='background: #BF4F51'></i>30-50<br/>";
